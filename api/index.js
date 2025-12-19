@@ -4,23 +4,20 @@ const manifest = require("../manifest.json");
 const builder = new addonBuilder(manifest);
 
 builder.defineStreamHandler((args) => {
-    const idParts = args.id.split(":");
-    const imdbId = idParts[0];
+    const [imdbId, season, episode] = args.id.split(":");
     let streamUrl = "";
 
     if (args.type === "movie") {
         streamUrl = `https://vixsrc.to/embed/movie/${imdbId}`;
     } else if (args.type === "series") {
-        const season = idParts[1] || "1";
-        const episode = idParts[2] || "1";
-        streamUrl = `https://vixsrc.to/embed/tv/${imdbId}/${season}/${episode}`;
+        streamUrl = `https://vixsrc.to/embed/tv/${imdbId}/${season || 1}/${episode || 1}`;
     }
 
     if (streamUrl) {
         return Promise.resolve({
             streams: [{
                 name: "Vixsrc",
-                title: "📺 Watch it",
+                title: "📺 Watch in HD",
                 externalUrl: streamUrl
             }]
         });
