@@ -1,0 +1,11 @@
+{
+  "id": "com.vixsrc.direct.stream",
+  "version": "1.0.0",
+  "name": "Vixsrc Direct",
+  "description": "Direct HD streams from Vixsrc.to",
+  "logo": "https://vixsrc.to/favicon.ico",
+  "resources": ["stream"],
+  "types": ["movie", "series"],
+  "idPrefixes": ["tt"],
+  "catalogs": []
+}
