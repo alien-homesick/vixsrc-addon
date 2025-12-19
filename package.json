@@ -1,8 +1,7 @@
 {
-  "name": "vixsrc-stremio-addon",
+  "name": "vixsrc-addon",
   "version": "1.0.0",
-  "main": "index.js",
   "dependencies": {
-    "stremio-addon-sdk": "^1.6.0"
+    "stremio-addon-sdk": "^1.6.10"
   }
 }
